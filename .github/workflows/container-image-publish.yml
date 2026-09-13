@@ -42,4 +42,4 @@ jobs:
         with:
           name: bao
           path: ./bin/bao
-          retention-days: 17
+          retention-days: 7
