@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build Openbao binary
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
         type: choice
         options:
           - development
-    build:
+      build:
         description: 'Build Openbao binary'
         required: false
         type: boolean
@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Set up Go
-        uses: actions/set-up-go@v7
+        uses: actions/setup-go@v7
         with:
           go-version: '1.27.1'
 
