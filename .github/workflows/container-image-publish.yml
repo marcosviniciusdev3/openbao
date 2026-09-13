@@ -33,7 +33,7 @@ jobs:
       - name: Build OpenBao binary
         run: |
           mkdir -p bin/amd64
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/amd64/bao .
+          GOARCH=amd64 GOOS=linux go build -o bin/amd64/bao ./cmd/bao
 
       - name: Upload binary artifact
         uses: actions/upload-artifact@v4
@@ -57,6 +57,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          platforms: linux/amd64
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ inputs.image_tag }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
