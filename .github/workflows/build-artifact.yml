@@ -10,7 +10,7 @@ on:
         type: choice
         options:
           - development
-    build:
+      build:
         description: 'Build Openbao binary'
         required: false
         type: boolean
