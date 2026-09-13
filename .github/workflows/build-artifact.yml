@@ -33,7 +33,7 @@ jobs:
           go-version: '1.27.1'
 
       - name: Build openbao
-        run: make build 
+        run: make
 
       - name: Upload binary
         uses: actions/upload-artifact@v7
